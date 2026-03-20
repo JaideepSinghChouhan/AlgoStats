@@ -14,6 +14,10 @@ export default function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!form.email.toLowerCase().endsWith('@skit.ac.in')) {
+      toast.error('Only @skit.ac.in college emails are allowed')
+      return
+    }
     if (form.password.length < 6) {
       toast.error('Password must be at least 6 characters')
       return
@@ -58,13 +62,15 @@ export default function Register() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
+              <label className="block text-sm font-medium text-slate-300 mb-1.5">College Email</label>
               <input
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                pattern=".+@skit\.ac\.in$"
+                title="Must be a valid @skit.ac.in college email"
+                placeholder="b230xxx@skit.ac.in"
                 required
                 className="input"
               />

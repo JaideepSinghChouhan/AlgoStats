@@ -12,6 +12,10 @@ const register = async (req, res) => {
     if (!username || !email || !password)
       return res.status(400).json({ message: 'All fields are required' });
 
+    if (!email.toLowerCase().endsWith('@skit.ac.in')) {
+      return res.status(400).json({ message: 'Only @skit.ac.in college emails are allowed to register' });
+    }
+
     const exists = await User.findOne({ $or: [{ email }, { username }] });
     if (exists)
       return res.status(400).json({ message: 'User already exists with that email or username' });
@@ -33,6 +37,10 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
   try {
+    if (!email.toLowerCase().endsWith('@skit.ac.in')) {
+      return res.status(401).json({ message: 'Only @skit.ac.in college emails are allowed' });
+    }
+
     const user = await User.findOne({ email });
     if (!user || !(await user.matchPassword(password)))
       return res.status(401).json({ message: 'Invalid email or password' });

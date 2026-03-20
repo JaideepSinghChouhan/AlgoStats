@@ -66,7 +66,7 @@ AlgoStats solves this by bringing everything into a **single, data-driven leader
 AlgoStats uses a weighted scoring formula to rank users:
 
 ```bash
-Score = CF × 1.5 + LC Contest × 1.0 + LC Solved × 2 + CC × 1.0 + AC × 1.0
+Score = CF × 1.5 + LC Contest × 1.0  + CC × 1.0 + AC × 1.0
 ```
 
 > This ensures fair comparison across different platforms.

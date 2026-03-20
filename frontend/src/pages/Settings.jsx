@@ -113,7 +113,6 @@ export default function Settings() {
         <code className="text-xs text-brand-400 leading-relaxed block">
           score = CF_rating × 1.5<br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ LC_contest_rating × 1.0<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ LC_solved × 2<br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ CC_rating × 1.0<br />
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ AC_rating × 1.0
         </code>

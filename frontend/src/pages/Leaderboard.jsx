@@ -123,7 +123,7 @@ export default function Leaderboard() {
       )}
 
       <p className="text-xs text-slate-600 mt-4 text-center">
-        Score = CF × 1.5 + LC Contest × 1.0 + LC Solved × 2 + CC × 1.0 + AC × 1.0
+        Score = CF × 1.5 + LC Contest × 1.0 + CC × 1.0 + AC × 1.0
       </p>
     </div>
   )

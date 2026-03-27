@@ -14,24 +14,37 @@ const fetchAndUpdateStats = async (user) => {
     updates.cfRating = cf.cfRating;
     updates.cfMaxRating = cf.cfMaxRating;
     updates.cfSolved = cf.cfSolved;
+  } else {
+    updates.cfRating = 0;
+    updates.cfMaxRating = 0;
+    updates.cfSolved = 0;
   }
 
   if (user.lcHandle) {
     const lc = await getLeetCodeStats(user.lcHandle);
     updates.lcContestRating = lc.lcContestRating;
     updates.lcSolved = lc.lcSolved;
+  } else {
+    updates.lcContestRating = 0;
+    updates.lcSolved = 0;
   }
 
   if (user.ccHandle) {
     const cc = await getCodeChefStats(user.ccHandle);
     updates.ccRating = cc.ccRating;
     updates.ccSolved = cc.ccSolved;
+  } else {
+    updates.ccRating = 0;
+    updates.ccSolved = 0;
   }
 
   if (user.acHandle) {
     const ac = await getAtCoderStats(user.acHandle);
     updates.acRating = ac.acRating;
     updates.acSolved = ac.acSolved;
+  } else {
+    updates.acRating = 0;
+    updates.acSolved = 0;
   }
 
   updates.score = computeScore({
